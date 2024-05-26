@@ -14,9 +14,8 @@ fi
 
 # Build and run backend container
 docker build -t backend -f backend/Dockerfile . || { echo 'Backend build failed'; exit 1; }
-docker run -d -p 5000:5000 --name backend backend || { echo 'Backend run failed'; exit 1; }
+docker run -d -p $backend_port:5000 --name backend backend || { echo 'Backend run failed'; exit 1; }
 
 # Build and run frontend container
 docker build -t frontend -f frontend/Dockerfile . || { echo 'Frontend build failed'; exit 1; }
-docker run -d -p 3000:3000 --name frontend frontend || { echo 'Frontend run failed'; exit 1; }
-
+docker run -d -p $frontend_port:3000 --name frontend frontend || { echo 'Frontend run failed'; exit 1; }

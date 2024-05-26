@@ -9,5 +9,5 @@ app.use(bodyParser.json());
 app.use('/api/setup', setupRouter);
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port $port`);
 });
