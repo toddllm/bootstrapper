@@ -2,11 +2,12 @@ FROM node:14
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY frontend/package*.json ./
 RUN npm install
 
-COPY . .
+COPY frontend/ .
 
 EXPOSE 3000
 
 CMD ["npm", "start"]
+

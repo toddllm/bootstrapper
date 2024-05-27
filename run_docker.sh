@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Stop and remove existing backend container if it exists
-if [ "$(docker ps -q -f name=backend)" ]; then
+if [ "$(docker ps -a -q -f name=backend)" ]; then
     docker stop backend
     docker rm backend
 fi
 
 # Stop and remove existing frontend container if it exists
-if [ "$(docker ps -q -f name=frontend)" ]; then
+if [ "$(docker ps -a -q -f name=frontend)" ]; then
     docker stop frontend
     docker rm frontend
 fi
